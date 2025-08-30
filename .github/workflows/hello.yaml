@@ -10,7 +10,7 @@ jobs:
         runs-on: ubuntu-latest
         steps: 
         - id: s01
-          run: echo "current time in Github is $(date), ${GITHUB_OUTPUT}"
+          run: echo "CURR_DATE=$(date), ${GITHUB_OUTPUT}"
           # create value and pass to next step
         - id: s02
           uses: mscoutermarsh/cowsays-action@master
