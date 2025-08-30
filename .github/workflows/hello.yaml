@@ -10,13 +10,16 @@ jobs:
         runs-on: ubuntu-latest
         steps: 
         - id: s01
-          run: echo "current time in Github is $(date)"
-
+          run: echo "current time in Github is $(date), ${GITHUB_OUTPUT}"
+          # create value and pass to next step
         - id: s02
+          run: echo "CURR_DATE=$(date)" >> $GITHUB_OUTPUT
+          # step - context
+        - id: s03
           uses: mscoutermarsh/cowsays-action@master
           with:
-            text: 'ship ship ship!'
-            color: 'red'
+            text: 'ship ship moo! ${{ steps.s02.outputs.CURR_DATE }}'
+            color: red
 
         # - id: s02
         #   run: ls -la
