@@ -14,3 +14,6 @@ jobs:
 
         - id: s02
           run: cat hello.txt
+
+        - id: s03
+          run: ls -l
