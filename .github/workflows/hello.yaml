@@ -16,7 +16,7 @@ jobs:
           uses: mscoutermarsh/cowsays-action@master
           with:
             # step - context
-            text: 'ship ship moo! ${{ steps.s01.outputs.CURR_DATE }}'
+            text: 'ship ship moo! ${{ steps.s01.outputs.CURR_DATE }}, ${{ github.ref }}, ${{ github.repository }}'
             color: red
 
         # - id: s02
