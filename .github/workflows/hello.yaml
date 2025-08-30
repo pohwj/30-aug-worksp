@@ -13,7 +13,7 @@ jobs:
           run: echo "current time in Github is $(date)"
 
         - id: s02
-          run: cat hello.txt
+          run: ls -la
 
         - id: s03
-          run: ls -l
+          run: cat hello.txt
