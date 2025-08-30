@@ -13,12 +13,10 @@ jobs:
           run: echo "current time in Github is $(date), ${GITHUB_OUTPUT}"
           # create value and pass to next step
         - id: s02
-          run: echo "CURR_DATE=$(date)" >> $GITHUB_OUTPUT
-          # step - context
-        - id: s03
           uses: mscoutermarsh/cowsays-action@master
           with:
-            text: 'ship ship moo! ${{ steps.s02.outputs.CURR_DATE }}'
+            # step - context
+            text: 'ship ship moo! ${{ steps.s01.outputs.CURR_DATE }}'
             color: red
 
         # - id: s02
